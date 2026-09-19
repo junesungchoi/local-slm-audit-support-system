@@ -1,0 +1,19 @@
+[
+  {
+    "id": "AC-01",
+    "title": "Inactive enabled account",
+    "file_pattern": "accounts*.csv",
+    "required_columns": ["account_id", "enabled", "last_login"],
+    "where": {"enabled": "true"},
+    "date_before": {"column": "last_login", "days_ago": 90},
+    "criterion_id": "AC-2"
+  },
+  {
+    "id": "AC-02",
+    "title": "Enabled account marked as retired",
+    "file_pattern": "accounts*.csv",
+    "required_columns": ["account_id", "enabled", "employment_status"],
+    "where": {"enabled": "true", "employment_status": "retired"},
+    "criterion_id": "AC-2"
+  }
+]

@@ -1,0 +1,39 @@
+# Python and operating-system files
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.DS_Store
+Thumbs.db
+
+# Generated local project files
+cases/
+criteria/
+*.log
+*.tmp
+
+# Audit evidence is excluded by default. Only approved synthetic test files
+# placed in sample_data may be committed.
+*.csv
+*.txt
+!sample_data/**/*.csv
+!sample_data/**/*.txt
+
+# Sensitive or large files: never commit actual audit material or local models
+*.xlsx
+*.xls
+*.docx
+*.pdf
+*.zip
+*.7z
+*.bin
+*.gguf
+*.safetensors
+*.pt
+*.pth
+*.onnx
+*.key
+*.pem
+secrets/
+credentials/
