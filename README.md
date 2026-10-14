@@ -15,11 +15,21 @@ An offline-first prototype for analysing non-classified audit evidence. It keeps
 python -m venv .venv
 .venv/bin/pip install -r requirements.txt
 cp sample_rules.json rules.json
-python app.py init-case CASE-2026-001
-python app.py ingest CASE-2026-001 /path/to/submitted-files
-python app.py analyse CASE-2026-001 --rules rules.json
-python app.py search CASE-2026-001 "retired account privileged access"
-python app.py draft CASE-2026-001 --question "Are inactive accounts controlled?"
+
+
+python -m venv .venv
+.venv/bin/pip install -r requirements.txt
+cp sample_rules.json rules.json
+
+## 1. Download this repository as a ZIP file, extract it to an approved local folder, and do not place operational evidence in the source-code repository.
+## 2. Open `src\local_audit_workpaper_v4`.
+## 3. Install Python 3.11 or later and select **Add python.exe to PATH** during installation.
+## 4. Start Ollama and confirm that the configured local model is available. The default model tag is `gemma4:12b`; change the Model field in the application if a different local tag is used.
+## 5. Double-click `setup.bat` once to install the required Python packages.
+## 6. Double-click `run.bat` to start the local desktop application. If it does not start, run `diagnose_python.bat`.
+## 7. In **Criteria**, upload the audit-criteria file. In **Evidence**, upload the evidence file and select **Run Local Review**.
+## 8. Review the draft in **Findings** and **Workpaper**. The system prepares decision-support drafts only; the auditor must verify the evidence and approve, revise, or reject all text.
+
 ```
 
 The final draft is created under `cases/<case-id>/outputs/`. It is a working paper, not an audit conclusion.
